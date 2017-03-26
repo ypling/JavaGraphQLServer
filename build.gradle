@@ -1,12 +1,28 @@
 group 'org.ypling'
 version '1.0-SNAPSHOT'
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    }
+}
+
 apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+}
+
+jar {
+    baseName = 'java-graphql-server'
+    version =  '0.0.1'
 }
 
 task start(dependsOn: 'build', type: JavaExec) {

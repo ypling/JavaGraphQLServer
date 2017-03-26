@@ -1,1 +1,1 @@
-web gradle start
+web gradle start --port=$PORT

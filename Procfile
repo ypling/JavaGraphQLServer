@@ -1,1 +1,1 @@
-web: gradle start
+web: ./build/install/app/bin/app

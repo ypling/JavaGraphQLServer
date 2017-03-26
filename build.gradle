@@ -9,7 +9,11 @@ repositories {
     mavenCentral()
 }
 
-task(start, dependsOn: 'build', type: JavaExec) {
+mainClassName = "HelloWorld"
+applicationName = "app"
+task stage(dependsOn: ['clean', 'installApp'])
+
+task start(dependsOn: 'build', type: JavaExec) {
     main = 'graphqlserver.Main'
     classpath = sourceSets.main.runtimeClasspath
 }
@@ -19,3 +23,5 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:1.2.5.RELEASE")
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+

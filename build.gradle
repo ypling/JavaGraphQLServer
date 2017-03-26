@@ -9,7 +9,6 @@ repositories {
     mavenCentral()
 }
 
-
 task(start, dependsOn: 'build', type: JavaExec) {
     main = 'graphqlserver.Main'
     classpath = sourceSets.main.runtimeClasspath

@@ -4,6 +4,7 @@ package graphqlserver;
  * Created by leonardli on 3/25/17.
  */
 
+import com.sun.corba.se.impl.orbutil.graph.Graph;
 import graphql.ExecutionResult;
 import graphql.GraphQL;
 import org.slf4j.Logger;
@@ -23,7 +24,7 @@ import java.util.Map;
 @EnableAutoConfiguration
 public class GraphQLController {
   TodoSchema todoSchema = new TodoSchema();
-  GraphQL graphql = new GraphQL(todoSchema.getSchema());
+  GraphQL graphql = GraphQL.newGraphQL(todoSchema.getSchema()).build();
 
   private static final Logger log = LoggerFactory.getLogger(GraphQLController.class);
 
